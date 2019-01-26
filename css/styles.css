@@ -1,0 +1,38 @@
+.cabeceraSobre{
+	width:auto;
+	height:70px;
+}
+.contenBtns{
+	/*border:1px dotted #000;*/
+	width:auto;
+	margin:auto; 
+	margin-top:20px; 
+	height:150px;
+}
+.botones{
+	/*border:1px dotted #000;*/
+	width:auto; 
+	height:105px; 
+	margin-left:130px; 
+	margin-top:20px; 
+	float:left;
+	cursor:pointer;
+}
+.botonesSobre{
+	border:5px dotted #06F;
+}
+img.caja{
+	width:100px;
+	height:105px;
+	background:url(../img/iconos2.png) 0 0;
+}
+img.comision{
+	width:100px;
+	height:105px;
+	background:url(../img/iconos2.png) -100px 0;
+}
+img.proveedor{
+	width:100px;
+	height:105px;
+	background:url(../img/iconos2.png) -199px 0;
+}

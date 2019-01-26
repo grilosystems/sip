@@ -1,0 +1,137 @@
+@charset "UTF-8";
+body{
+	font-family:Tahoma, Geneva, sans-serif;
+	background:url(../img/fondo_clave.jpg);
+	margin:0;
+}
+#contenedor{
+	border:0px solid #000;
+	margin:auto;
+	width:800px;
+}
+header ul li{
+	float:left;
+	width:70px;
+	margin-top:30px;
+	margin-left:30px;
+	list-style-type:none;
+}
+header ul li a{
+	text-decoration:none;
+	color:#000;
+}
+header ul li a:hover{
+	color:#F00;
+	text-decoration:underline;
+}
+.nomUsr{
+	width:200px;
+	color:#FFF;
+	text-shadow: 2px 3px 3px #292929;
+	letter-spacing: 0px;
+	-webkit-text-stroke: 1px white;
+}
+#avatar{
+	float:left;
+	width:100px; height:100px;
+	background:#666;
+	border:2px groove #FFF;
+	margin-left:160px;
+	margin-bottom:10px;
+	box-shadow:0px 10px 25px rgb(0,0,0,0.4);
+	-webkit-box-shadow: 0px 10px 25px #0A0909;
+	-moz-box-shadow:0px 10px 25px rgb(0,0,0,0.4);
+}
+#avatar img{
+	width:100px; height:100px;
+}
+.menu_acordion{
+	width:100%;
+	margin-top:10px;
+}
+.icono{
+	float:left;
+	margin-left:5%;
+	width:100px; height:100px;
+	cursor:pointer;
+}
+.icono a{
+	text-decoration:none;
+}
+.icono p:hover{
+	color:#1484E6;
+}
+.icono:hover{
+	box-shadow:0px 10px 25px rgb(0,0,0,0.4);
+	-webkit-box-shadow:0px 10px 25px #0A0909;
+	-moz-box-shadow:0px 10px 25px rgb(0,0,0,0.4);
+}
+img.iconAdmon{
+	width:100px; height:100px;
+	background:url(../img/icons1.png) -170px 0;
+}
+img.iconExp{
+	width:100px; height:100px;
+	background:url(../img/icons1.png) -270px 0;
+}
+img.iconAyuda{
+	width:70px; height:90px;
+	background:url(../img/icons1.png) -100px 0;
+}
+img.iconSalir{
+	width:100px; height:90px;
+	background:url(../img/icons1.png) 0 0;
+}
+.deCuatro{
+	float:left;
+	margin-left:9%;
+	width:100px; height:100px;
+	cursor:pointer;
+}
+.deCuatro p:hover{
+	color:#1484E6;
+}
+.deCuatro:hover{
+	box-shadow:0px 10px 25px rgb(0,0,0,0.4);
+	-webkit-box-shadow:0px 10px 25px #0A0909;
+	-moz-box-shadow:0px 10px 25px rgb(0,0,0,0.4);
+}
+.deCuatro a{
+	text-decoration:none;
+}
+img.iconSolC{
+	width:100px; height:100px;
+	background:url(../img/iconos2.png) 0 0;
+}
+img.iconSolP{
+	width:100px; height:100px;
+	background:url(../img/iconos2.png) -200px 0;
+}
+img.iconSolN{
+	width:100px; height:100px;
+	background:url(../img/iconos2.png) -100px 0;
+}
+img.iconSolE{
+	width:100px; height:100px;
+	background:url(../img/iconos2.png) -300px 0;
+}
+img.iconMail{
+	width:100px; height:100px;
+	background:url(../img/icons1.png) -370px 0;
+}
+img.iconTele{
+	width:100px; height:100px;
+	background:url(../img/icons1.png) -485px 0;
+}
+img.iconPass{
+	width:100px; height:100px;
+	background:url(../img/icons1.png) -611px 0;
+}
+img.iconFoto{
+	width:100px; height:100px;
+	background:url(../img/avatar.png);
+}
+footer{
+	margin-top:30px;
+	margin-bottom:30px;
+}

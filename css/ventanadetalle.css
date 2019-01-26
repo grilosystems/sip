@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.divDetalle{
+	border:0px solid #000;
+	margin:auto;
+	width:500px;
+}
+.divDetalle table td input{
+	border:none;
+	background-color:transparent;
+	font-size:13px;
+	color:#000;
+}

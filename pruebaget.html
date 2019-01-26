@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript" src="js/jquery-2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+		var sHTML="";
+        $.get("admins_all_reg.xml",{},function(xml){
+            $(xml).find('caja').each(function() {
+                sHTML+="<tr><td>"+$(this).find('id_solicitud').text()+"</td></tr>";
+            });
+			$("#datos").html(sHTML); 
+        });           
+    });
+</script>
+</head>
+
+<body>
+<table id="datos"></table>
+</body>
+</html>
