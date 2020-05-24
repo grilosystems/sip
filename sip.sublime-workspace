@@ -1,0 +1,680 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"slider",
+				"slidervideo"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"fon",
+				"font-style"
+			],
+			[
+				"Cal",
+				"Calientes"
+			],
+			[
+				"cu",
+				"Coahuila"
+			],
+			[
+				"chi",
+				"Chihuahua"
+			],
+			[
+				"if",
+				"iframe\tTag"
+			],
+			[
+				"col",
+				"col-md-12"
+			],
+			[
+				"c",
+				"colspan\tAttr"
+			],
+			[
+				"p",
+				"placeholder\tAttr"
+			],
+			[
+				"h",
+				"hidden\tAttr"
+			],
+			[
+				"numb",
+				"number"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"al",
+				"alt\tAttr"
+			],
+			[
+				"pass",
+				"pass2"
+			],
+			[
+				"su",
+				"sup\tTag"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"id",
+				"idpersonal"
+			],
+			[
+				"dat",
+				"dato"
+			],
+			[
+				"data",
+				"dataInsert"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"da",
+				"datos_user"
+			],
+			[
+				"l",
+				"linkUrl"
+			],
+			[
+				"ur",
+				"url"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"uri",
+				"uriSecret"
+			],
+			[
+				"acc",
+				"accesUser"
+			],
+			[
+				"enc",
+				"encrypt"
+			],
+			[
+				"encr",
+				"encryption"
+			],
+			[
+				"ro",
+				"row_array"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"je",
+				"json_decode"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"usua",
+				"usuarioFind"
+			],
+			[
+				"ta",
+				"tabla"
+			],
+			[
+				"vi",
+				"view"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"pr",
+				"println"
+			],
+			[
+				"sy",
+				"System"
+			],
+			[
+				"ar",
+				"archivoPDF"
+			],
+			[
+				"em",
+				"embed\tTag"
+			],
+			[
+				"con",
+				"conexion"
+			],
+			[
+				"co",
+				"conexion"
+			],
+			[
+				"usu",
+				"usuario"
+			],
+			[
+				"coe",
+				"conexion"
+			],
+			[
+				"ca",
+				"categoria"
+			],
+			[
+				"t",
+				"titulo"
+			],
+			[
+				"sessio",
+				"session_start"
+			],
+			[
+				"session_st",
+				"session_start"
+			],
+			[
+				"hea",
+				"head"
+			],
+			[
+				"N",
+				"Null"
+			],
+			[
+				"SQLi",
+				"sqlite_open"
+			],
+			[
+				"cor",
+				"correo"
+			],
+			[
+				"a_",
+				"a_paterno"
+			],
+			[
+				"nom",
+				"nombre"
+			],
+			[
+				"fget",
+				"fgetcsv"
+			],
+			[
+				"sex",
+				"sexo"
+			],
+			[
+				"se",
+				"sex"
+			],
+			[
+				"getP",
+				"getProfesional"
+			],
+			[
+				"getPr",
+				"getPrimaria"
+			],
+			[
+				"prima",
+				"primarios"
+			],
+			[
+				"superi",
+				"superiores"
+			],
+			[
+				"supe",
+				"superior"
+			],
+			[
+				"secunda",
+				"secundarios"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"primari",
+				"primarios"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 247.0,
+		"last_filter": "php",
+		"selected_items":
+		[
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Install Package Control"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Library/WebServer/Documents/sip"
+	],
+	"file_history":
+	[
+		"/Library/WebServer/Documents/micgsportal/application/config/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/theme/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/slider.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/footer.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/nav.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/header.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/home.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/controllers/Welcome.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ScriptsFTP Proyectos",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/contacus.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/system/libraries/Form_validation.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/config/config.php",
+		"/Users/marcoapugamalagon/Desktop/zurmo-3.2.es.po",
+		"/Users/marcoapugamalagon/Desktop/Zurmo intalación",
+		"/Applications/XAMPP/xamppfiles/var/mysql/ib_logfile1",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/theme/css/ddlevelsmenu-topbar.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/system/libraries/Email.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/theme/css/slider.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/slidervideo.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/theme/css/settings.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/.htaccess",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/untitled.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/theme/js/mapael.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/theme/css/mapael.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/theme/mapael/mapael.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/system/helpers/html_helper.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/micgs/application/views/welcome_message.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/models/Usuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/models/Personal.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/controllers/Welcome.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/guithem/jsapps/appLogin.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/system/database/DB_result.php",
+		"/Users/marcoapugamalagon/Desktop/LinksPrn.txt",
+		"/Users/marcoapugamalagon/Desktop/paginaYajairo.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/views/registeraccount.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/views/account.php",
+		"/Users/marcoapugamalagon/Desktop/pagina1.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/views/footer.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/views/head.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/views/navMenu.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/logs/log-2017-11-29.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/bd/vorrat.sql",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/config/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/system/database/DB_query_builder.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/views/login.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/config/autoload.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/views/forgotpassword.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/controllers/Usuarios.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/config/database.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/models/Usuario_model.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/models/Usuario",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/views/principal.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/.htaccess",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/readme.rst",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/system/core/CodeIgniter.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/vorrat2/application/config/constants.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Portal/application/controllers/Welcome.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Portal/application/views/contenido.php",
+		"/Users/marcoapugamalagon/Desktop/ConsultasContactosdb",
+		"/Users/marcoapugamalagon/Desktop/bdcontactos.sql",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Portal/application/views/menu.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Portal/application/views/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Portal/application/config/database.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/examinator/js/funcsMin.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/Passwords MX FTP",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Portal/application/views/header.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Portal/application/config/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/gsmx/application/views/header.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/examinator/js/funcs.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/examinator/admin.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/pagina_base/bin/contact_me.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/agendazf1/docs/agendaDB.sql",
+		"/Users/marcoapugamalagon/Desktop/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Contrato/Cuentas de correo GrupoHen",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/gsmx/assets/plugins/portfolio/prettyPhoto.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/pagina_base/faq.html",
+		"/Users/marcoapugamalagon/Desktop/tempfolio/untitled copia.html",
+		"/Users/marcoapugamalagon/Desktop/tempfolio/untitled.html",
+		"/Users/marcoapugamalagon/Desktop/tempfolio/css/prettyPhoto.css",
+		"/Users/marcoapugamalagon/Desktop/tempfolio/js/mainCopia.js",
+		"/Users/marcoapugamalagon/Desktop/tempfolio/css/mainCopia.css",
+		"/Users/marcoapugamalagon/Downloads/untitled.html",
+		"/Users/marcoapugamalagon/Desktop/Wizard/index.htm",
+		"/Users/marcoapugamalagon/Desktop/video.js-master/docs/examples/simple-embed/index.html",
+		"/Users/marcoapugamalagon/Desktop/jPlayer-2.9.2/examples/blue.monday/demo-03-video.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/Workspace VorratTeile/vorrat/sql.scripts/vorrat_teil_bitaco.sql",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/Workspace VorratTeile/vorrat/sql.scripts/view_teils.sql",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/Workspace VorratTeile/vorrat/sql.scripts/procInsertUser.sql",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ERPGS/vorrat/Workspace VorratTeile/vorrat/sql.scripts/procInsertAlmacen.sql",
+		"/Users/marcoapugamalagon/Desktop/Document GS/MediaWiki GriloDev",
+		"/Users/marcoapugamalagon/Desktop/Document GS/Presupuestos/Folklor 7/PASS FK7",
+		"/Users/marcoapugamalagon/Documents/Claves.rtf",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/grupohen/Bkps/corlate-free-responsive-business-html-template/index.html",
+		"/Users/marcoapugamalagon/Desktop/template.html",
+		"/Volumes/KINGSTON/spring-batch/src/main/java/example/spring/batch/readers/ExcelReader.java",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/mx/Proyectos/fk7/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/grilosystems/ci_captcha/application/models/home_model.php",
+		"/Users/marcoapugamalagon/Desktop/sitemap.xml",
+		"/Users/marcoapugamalagon/Desktop/robots.txt",
+		"/Users/marcoapugamalagon/Desktop/bootstrap-3.3-2.6-dist/index.html",
+		"/Users/marcoapugamalagon/Desktop/bootstrap-3.3-2.6-dist/cuboanime.css",
+		"/Users/marcoapugamalagon/Desktop/bootstrap-3.3-2.6-dist/Cubo3d.html",
+		"/Users/marcoapugamalagon/Desktop/bootstrap-3.3-2.6-dist/Cubo3d",
+		"/Users/marcoapugamalagon/Desktop/bootstrap-3.3-2.6-dist/anim.css",
+		"/Users/marcoapugamalagon/Desktop/bootstrap-3.3-2.6-dist/css/bootstrap.min.css",
+		"/Users/marcoapugamalagon/Desktop/animacion.html",
+		"/Users/marcoapugamalagon/Desktop/Proyecto-Folklore7/web3.html",
+		"/Users/marcoapugamalagon/Desktop/PASS FK7",
+		"/Applications/XAMPP/xamppfiles/htdocs/vorrat/Pssword y usuarios",
+		"/Users/marcoapugamalagon/Desktop/cm-subir-archivo-mysql/subir.php",
+		"/Users/marcoapugamalagon/Desktop/Jquery y CSS/ext-4.2.0.663/bootstrap.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/vorrat/BD15112015.sql",
+		"/Users/marcoapugamalagon/Downloads/orangehrm-3.3.1.12255/orangehrm-3.3.1/build/fix-ids.php",
+		"/Users/marcoapugamalagon/Desktop/CConexion.php",
+		"/Users/marcoapugamalagon/Desktop/TestCConexion.php",
+		"/Users/marcoapugamalagon/Desktop/funcs.js",
+		"/Users/marcoapugamalagon/Desktop/contacto.sql",
+		"/Users/marcoapugamalagon/Desktop/conexion.propiedades",
+		"/Applications/XAMPP/xamppfiles/htdocs/vorrat/Workspace/nbproject/private/config.properties",
+		"/Applications/XAMPP/xamppfiles/etc/php.ini",
+		"/Applications/Endpoint Security VPN.app/Contents/PkgInfo",
+		"/Users/marcoapugamalagon/Desktop/exportCadena.csv",
+		"/Users/marcoapugamalagon/Desktop/Java 7/Cursos Spring 3/dia1/pom.xml",
+		"/Users/marcoapugamalagon/Desktop/tempo/clases/Usuario.php",
+		"/Users/marcoapugamalagon/Desktop/tempo/clases/TipoRefaccion.php",
+		"/Users/marcoapugamalagon/Desktop/tempo/clases/Teil.php",
+		"/Users/marcoapugamalagon/Desktop/tempo/clases/Reparacion.php",
+		"/Users/marcoapugamalagon/Desktop/tempo/clases/Personal.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "sip.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"config",
+				"application/config/config.php"
+			],
+			[
+				"form",
+				"system/libraries/Form_validation.php"
+			],
+			[
+				"heade",
+				"application/views/header.php"
+			],
+			[
+				"mai",
+				"system/libraries/Email.php"
+			],
+			[
+				"em",
+				"system/libraries/Email.php"
+			],
+			[
+				"ema",
+				"system/libraries/Email.php"
+			],
+			[
+				"emai",
+				"system/libraries/Email.php"
+			],
+			[
+				"con",
+				"application/config/config.php"
+			],
+			[
+				"aut",
+				"application/config/autoload.php"
+			],
+			[
+				"conf",
+				"application/config/config.php"
+			],
+			[
+				"da",
+				"application/config/database.php"
+			],
+			[
+				"databa",
+				"application/config/database.php"
+			],
+			[
+				"confi",
+				"application/config/config.php"
+			],
+			[
+				"au",
+				"application/config/autoload.php"
+			],
+			[
+				".ht",
+				"application/.htaccess"
+			],
+			[
+				"consta",
+				"application/config/constants.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 277.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
