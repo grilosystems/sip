@@ -4,8 +4,6 @@
 	include("expdf.php");
 	
 	/*Variables de sesión */
-	session_name('user_sesion');
-	session_start();
 	if(!isset($_SESSION['usr_ses'])){
 		echo '<script type="text/javascript">window.location.assign("http://www.grilosystems.com");</script>';
 	}
@@ -13,7 +11,7 @@
 	$id_tipo = $_SESSION['tipo_usr'];
 	$nombre_usr = $_SESSION['usr_ses'];
 	$correo_usr = $_SESSION['correo_usr'];
-	
+	$accion = "";
 	/*Java y JQuery*/
 	$librerias='<script type="text/javascript" src="js/jquery-2.min.js"></script>
 			  	<script type="text/javascript" src="js/jqueryui.js"></script>
@@ -22,9 +20,13 @@
 			  	<link type="text/css" href="css/jquery-ui-min.css" rel="stylesheet" />
 			  	<link type="text/css" href="css/tablas.css" rel="stylesheet" />
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
-	
+
+	//Esto debe ser restructurado
+	if(isset($_REQUEST['accion'])){
+		$accion = $_REQUEST['accion'];
+	}
 	/*Variables capturadas */
-	switch ($_REQUEST['accion']){
+	switch ($accion){
 		/*********************************************************USUARIOS****************************************************/
 		case "eliminar_usr":
 			echo $librerias;

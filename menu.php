@@ -2,6 +2,7 @@
 	//Evita que se entre directamente a la pagina
 	session_name('user_sesion');
 	session_start();
+	$tsolicitud = "";
 	if(isset($_SESSION['usr_ses']) && isset($_SESSION['tipo_usr'])){
 		$usuario = $_SESSION['usr_ses'];
 		$id_admin=$_SESSION['tipo_usr'];
@@ -14,8 +15,12 @@
 		header('Location: http://www.grilosystems.com');
 	}
 	
+	if(isset($_REQUEST['tsolicitud'])){
+		$tsolicitud = $_REQUEST['tsolicitud'];
+	}
+
 	//Solicitudes
-	switch($_REQUEST['tsolicitud']){
+	switch($tsolicitud){
 		case "rembolso":
 			echo '<meta http-equiv="refresh" content="0;url=caja.php" >';
 		break;

@@ -4,32 +4,27 @@
 	
 	function conectar($onoff){
 		//Conexion a la base de datos
-		
-		/*PARAMETROS SERVIDOR FREHOSTIA (PRODUCCION)
-		$servidor="mysql12.freehostia.com";
-		$usuario="marpug6_usersg"; 
-		$clave="shoulder123";
-		$base="marpug6_usersg";*/
-
+		$conexion = "";
 		/*PARAMETROS SERVIDOR LOCAL*/
 		$servidor="localhost";
-		$usuario="root"; 
-		$clave="";
+		$usuario="spidb"; 
+		$clave="spi_123#db";
 		$base="spi";
-		$conexion = mysql_connect($servidor,$usuario,$clave);
-		if($onoff=="on"){
-			//Abriendo conexion
-			if(!$conexion){
-				die("<style type='text/css' media='all'>
-						a { text-decoration:none; color:#06C; }
-						a:hover { text-decoration:underline; }
-						a:visited { color:#06C; }
-						p { font-family:'Arial'; font-size:18px; color:#06C; }
-			  		</style>
-			  		<p align='center'>No se ha podido conectar con la base de datos por causa de un error.</p>
-			  		<br /><a href='index.php'><p align='center'>Aceptar</p></a>");
+
+		try {
+			$conexion = new mysqli($servidor,$usuario,$clave,$base);
+			$conexion->set_charset("utf8");
+			if($conexion->connect_errno){
+				throw new Exception($conexion->connect_error);
 			}
-			mysql_select_db($base,$conexion); 
+		} catch (Exception $e) {
+			throw new Exception("Existen errores en la conexión a la BD ");
+		}
+		
+		if($onoff=="on"){
+			// Devuelve objeto de conexion
+			return $conexion;
+
 		}else if($onoff=="off"){
 			mysql_close($conexion);
 		}else{ echo 'Error: No especifico parametro valido'; }
