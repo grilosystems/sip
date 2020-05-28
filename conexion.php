@@ -26,7 +26,7 @@
 			return $conexion;
 
 		}else if($onoff=="off"){
-			mysql_close($conexion);
+			mysqli_close($conexion);
 		}else{ echo 'Error: No especifico parametro valido'; }
 	}
 	

@@ -1,5 +1,5 @@
 <?php
-	
+	 include("conexion.php");
 	 session_name('user_sesion');
 	 session_start();
 	 $_SESSION['usr_ses']='nada';
@@ -7,8 +7,6 @@
 	 $_SESSION['id_usr']='nada';
 	 $_SESSION['avatar']='nada';
 	 $_SESSION['correo_usr']='nada';
-	 
-	 include("conexion.php");
 	 
 	 $clave = $_POST['clave_usr'];
 	 $usr = $_POST['mail_usr'];

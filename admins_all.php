@@ -2,7 +2,7 @@
 
 	include("conexion.php");
 	include("expdf.php");
-	
+	// session_start();
 	/*Variables de sesión */
 	if(!isset($_SESSION['usr_ses'])){
 		echo '<script type="text/javascript">window.location.assign("http://www.grilosystems.com");</script>';
@@ -41,9 +41,9 @@
 								window.location.assign("menu.php");
 						});</script>';
 			}else{
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-					$quepacho=mysql_query("DELETE FROM usuario WHERE id_usuario = '".$id_del."'");
+				$objConexion = conectar("on");
+				
+					$quepacho=$objConexion->query("DELETE FROM usuario WHERE id_usuario = '".$id_del."'");
 				conectar("off");
 				if(!$quepacho){
 					echo '<div id="ventana_del">
@@ -72,10 +72,10 @@
 		case "editar_usr":
 			echo $librerias;
 			if($id_tipo==1){
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-				$consulta = mysql_query("SELECT * FROM usuario WHERE id_usuario='".$_REQUEST['id']."'");
-				while($fila=mysql_fetch_array($consulta)){
+				$objConexion = conectar("on");
+				
+				$consulta = $objConexion->query("SELECT * FROM usuario WHERE id_usuario='".$_REQUEST['id']."'");
+				while($fila=$consulta->fetch_assoc()){
 					$tipo_usr_opc=$fila['tipo_usuario'];
 					$correo=$fila['email_usuario'];
 					$clave=$fila['password_usuario'];
@@ -109,9 +109,9 @@
 						<tr>
 							<td><label>Tipo: </label></td>
 							<td><select id="tipo_de_usuario">';
-							conectar("on");
-							mysql_query("SET NAMES 'utf8'");
-							$opciones=mysql_query("SELECT * FROM tipo_usuario");
+							$objConexion = conectar("on");
+							
+							$opciones=$objConexion->query("SELECT * FROM tipo_usuario");
 							while($opcion=mysql_fetch_array($opciones)){
 								if($opcion['id_tipo_usuario']==$tipo_usr_opc){
 									echo '<option value="'.$opcion['id_tipo_usuario'].'" selected="selected">'.$opcion['tipo'].'</option>';
@@ -157,10 +157,10 @@
 			$datos_req = preg_split( '[,]',$cadena_datos); //correo 0,clave 1,nombre 2,rfc 3,telefono 4,tipo 5,validacion 6,usuario 7
 
 			if($datos_req[6]=="true"){
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
+				$objConexion = conectar("on");
+				
 				$consulta_actualizar="UPDATE `usuario` SET `email_usuario`='".$datos_req[0]."', `password_usuario`='".$datos_req[1]."', `nombre_usuario`='".$datos_req[2]."', `rfc_usuario`='".$datos_req[3]."', `tipo_usuario`='".$datos_req[5]."', `telefono_usuario`='".$datos_req[4]."' WHERE `id_usuario`='".$datos_req[7]."'";
-				mysql_query($consulta_actualizar);
+				$objConexion->query($consulta_actualizar);
 				conectar("off");
 				echo '<div id="ventana_actualizado">
 						<p>Se han actualizado los datos del usuario: <br />
@@ -217,9 +217,9 @@
 						<tr>
 							<td><label>Tipo: </label></td>
 							<td><select id="tipo_de_usuario">';
-							conectar("on");
-							mysql_query("SET NAMES 'utf8'");
-							$opciones=mysql_query("SELECT * FROM tipo_usuario");
+							$objConexion = conectar("on");
+							
+							$opciones=$objConexion->query("SELECT * FROM tipo_usuario");
 							while($opcion=mysql_fetch_array($opciones)){
 								if($opcion['id_tipo_usuario']==$tipo_usr_opc){
 									echo '<option value="'.$opcion['id_tipo_usuario'].'" selected="selected">'.$opcion['tipo'].'</option>';
@@ -256,9 +256,9 @@
 			$valido = $datos_req[6];
 			if($valido=="true"){
 				$consulta_grabar="INSERT INTO `usuario` (`tipo_usuario`, `email_usuario`, `password_usuario`, `nombre_usuario`, `rfc_usuario`) VALUES ('".$datos_req[5]."', '".$datos_req[0]."', '".$datos_req[1]."', '".$datos_req[2]."', '".$datos_req[3]."')";
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-					$quepacho=mysql_query($consulta_grabar);
+				$objConexion = conectar("on");
+				
+					$quepacho=$objConexion->query($consulta_grabar);
 				conectar("off");
 				if(!$quepacho){
 					echo '<p align="center">Error al grabar los datos, puede ser por las siguentes razones:<br /><ul><li>El usuario ya existe.</li><li>Se esta dando mantenimiento a la base de datos.</li><li>Se esta realizando mantenimiento al sistema</li>';
@@ -274,9 +274,9 @@
 		case "eliminar_des":
 			echo $librerias;
 			$id_del=$_REQUEST['id'];
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-					$quepacho=mysql_query("DELETE FROM desarrollo WHERE id_desarrollo = '".$id_del."'");
+				$objConexion = conectar("on");
+				
+					$quepacho=$objConexion->query("DELETE FROM desarrollo WHERE id_desarrollo = '".$id_del."'");
 				conectar("off");
 				if(!$quepacho){
 					echo '<div id="ventana_del">
@@ -304,10 +304,10 @@
 		case "editar_des":
 		echo $librerias;
 		if($id_tipo==1){
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-				$consulta = mysql_query("SELECT * FROM desarrollo WHERE id_desarrollo='".$_REQUEST['id']."'");
-				while($fila=mysql_fetch_array($consulta)){
+				$objConexion = conectar("on");
+				
+				$consulta = $objConexion->query("SELECT * FROM desarrollo WHERE id_desarrollo='".$_REQUEST['id']."'");
+				while($fila=$consulta->fetch_assoc()){
 					$desarrollo=$fila['nombre_desarrollo'];
 					$rfc_des=$fila['rfc_desarrollo'];
 					$dir_des=$fila['diereccion_desarrollo'];
@@ -331,9 +331,9 @@
 					  	<tr>
 							<td><label>Titular: </label></td>
 							<td><select id="titular_des">';
-							conectar("on");
-							mysql_query("SET NAMES 'utf8'");
-							$opciones=mysql_query("SELECT id_usuario, nombre_usuario FROM usuario");
+							$objConexion = conectar("on");
+							
+							$opciones=$objConexion->query("SELECT id_usuario, nombre_usuario FROM usuario");
 							while($opcion=mysql_fetch_array($opciones)){
 								if($opcion['id_usuario']==$usr_des){
 									echo '<option value="'.$opcion['id_usuario'].'" selected="selected">'.$opcion['nombre_usuario'].'</option>';
@@ -376,10 +376,10 @@
 				$cadena_datos=$_POST['datos'];
 				$datos_req = preg_split( '[,]',$cadena_datos); //desarrollo 0,rfc 1,direccion 2,titular_des 3,validacion 4,usuario 5
 				if($datos_req[4]=="true"){
-					conectar("on");
-					mysql_query("SET NAMES 'utf8'");
+					$objConexion = conectar("on");
+					
 				$consulta_actualizar="UPDATE `desarrollo` SET `nombre_desarrollo`='".$datos_req[0]."', `rfc_desarrollo`='".$datos_req[1]."', `diereccion_desarrollo`='".$datos_req[2]."', `usuario_desarrollo`='".$datos_req[3]."' WHERE `id_desarrollo`='".$datos_req[5]."'";
-				mysql_query($consulta_actualizar);
+				$objConexion->query($consulta_actualizar);
 				conectar("off");
 				echo '<div id="ventana_actualizado">
 						<p>Se han actualizado los datos del desarrollo: <br />
@@ -428,9 +428,9 @@
 					<tr>
 						<td><label>Titular: </label></td>
 						<td><select id="titular_des">';
-						conectar("on");
-						mysql_query("SET NAMES 'utf8'");
-						$opciones=mysql_query("SELECT id_usuario, nombre_usuario FROM usuario");
+						$objConexion = conectar("on");
+						
+						$opciones=$objConexion->query("SELECT id_usuario, nombre_usuario FROM usuario");
 						while($opcion=mysql_fetch_array($opciones)){
 							if($opcion['id_usuario']==$usr_des){
 								echo '<option value="'.$opcion['id_usuario'].'" selected="selected">'.$opcion['nombre_usuario'].'</option>';
@@ -466,9 +466,9 @@
 			$valido = $datos_req[4];
 			if($valido=="true"){
 				$consulta_grabar="INSERT INTO `desarrollo` (`nombre_desarrollo`, `rfc_desarrollo`, `diereccion_desarrollo`, `usuario_desarrollo`) VALUES ('".$datos_req[0]."', '".$datos_req[1]."', '".$datos_req[2]."', '".$datos_req[3]."')";
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-					$quepacho=mysql_query($consulta_grabar);
+				$objConexion = conectar("on");
+				
+					$quepacho=$objConexion->query($consulta_grabar);
 				conectar("off");
 				if(!$quepacho){
 					echo '<p align="center">Error al grabar los datos, puede ser por las siguentes razones:<br /><ul><li>El desarrollo ya existe.</li><li>Se esta dando mantenimiento a la base de datos.</li><li>Se esta realizando mantenimiento al sistema</li>';
@@ -484,9 +484,9 @@
 		case "eliminar_dep":
 			echo $librerias;
 			$id_del=$_REQUEST['id'];
-			conectar("on");
-			mysql_query("SET NAMES 'utf8'");
-				$quepacho=mysql_query("DELETE FROM departamento WHERE id_departamento = '".$id_del."'");
+			$objConexion = conectar("on");
+			
+				$quepacho=$objConexion->query("DELETE FROM departamento WHERE id_departamento = '".$id_del."'");
 			conectar("off");
 			if(!$quepacho){
 					echo '<div id="ventana_del">
@@ -514,10 +514,10 @@
 		case "editar_dep":
 		echo $librerias;
 		if($id_tipo==1){
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-				$consulta = mysql_query("SELECT * FROM departamento WHERE id_departamento='".$_REQUEST['id']."'");
-				while($fila=mysql_fetch_array($consulta)){
+				$objConexion = conectar("on");
+				
+				$consulta = $objConexion->query("SELECT * FROM departamento WHERE id_departamento='".$_REQUEST['id']."'");
+				while($fila=$consulta->fetch_assoc()){
 					$departamento=$fila['nombre_departamento'];
 				}
 				conectar("off");
@@ -556,10 +556,10 @@
 			$cadena_datos=$_POST['datos'];
 			$datos_req = preg_split( '[,]',$cadena_datos); //departamento 0,valida 1,usuario 2
 			if($datos_req[1]=="true"){
-			conectar("on");
-			mysql_query("SET NAMES 'utf8'");
+			$objConexion = conectar("on");
+			
 				$consulta_actualizar="UPDATE `departamento` SET `nombre_departamento`='".$datos_req[0]."' WHERE `id_departamento`='".$datos_req[2]."'";
-				mysql_query($consulta_actualizar);
+				$objConexion->query($consulta_actualizar);
 			conectar("off");
 			echo '<div id="ventana_actualizado">
 					<p>Se han actualizado los datos del departamento: <br />
@@ -619,9 +619,9 @@
 			$valido = $datos_req[1];
 			if($valido=="true"){
 				$consulta_grabar="INSERT INTO `departamento` (`nombre_departamento`) VALUES ('".$datos_req[0]."')";
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-					$quepacho=mysql_query($consulta_grabar);
+				$objConexion = conectar("on");
+				
+					$quepacho=$objConexion->query($consulta_grabar);
 				conectar("off");
 				if(!$quepacho){
 					echo '<p align="center">Error al grabar los datos, puede ser por las siguentes razones:<br /><ul><li>El departamento ya existe.</li><li>Se esta dando mantenimiento a la base de datos.</li><li>Se esta realizando mantenimiento al sistema</li>';
@@ -636,9 +636,9 @@
 /*********************************************** CLIENTES *******************************************************************/
 		case "eliminar_cli":
 			$id_del=$_REQUEST['id'];
-			conectar("on");
-			mysql_query("SET NAMES 'utf8'");
-				$quepacho=mysql_query("DELETE FROM cliente WHERE id_cliente = '".$id_del."'");
+			$objConexion = conectar("on");
+			
+				$quepacho=$objConexion->query("DELETE FROM cliente WHERE id_cliente = '".$id_del."'");
 			conectar("off");
 			if(!$quepacho){
 					echo $librerias;
@@ -668,10 +668,10 @@
 		case "editar_cli":
 		echo $librerias;
 		if($id_tipo==1){
-				conectar("on");
-				mysql_query("SET NAMES 'utf8'");
-				$consulta = mysql_query("SELECT * FROM cliente WHERE id_cliente='".$_REQUEST['id']."'");
-				while($fila=mysql_fetch_array($consulta)){
+				$objConexion = conectar("on");
+				
+				$consulta = $objConexion->query("SELECT * FROM cliente WHERE id_cliente='".$_REQUEST['id']."'");
+				while($fila=$consulta->fetch_assoc()){
 					$cliente=$fila['nombre_cliente'];
 					$departamentoCliente=$fila['depto_cliente'];
 					$comentarioCliente=$fila['comentarios_cliente'];
@@ -691,9 +691,9 @@
 						<tr>
 						<td><label>Asesor: </label></td>
 						<td><select id="seldesAsesor">';
-						conectar("on");
-						mysql_query("SET NAMES 'utf8'");
-						$opciones=mysql_query("SELECT id_usuario, nombre_usuario FROM usuario");
+						$objConexion = conectar("on");
+						
+						$opciones=$objConexion->query("SELECT id_usuario, nombre_usuario FROM usuario");
 						while($opcion=mysql_fetch_array($opciones)){
 							if($opcion['id_usuario']==$id_asesorCliente){
 								echo '<option value="'.$opcion['id_usuario'].'" selected="selected">'.$opcion['nombre_usuario'].'</option>';
@@ -740,10 +740,10 @@
 			$cadena_datos=$_POST['datos'];
 			$datos_req = preg_split( '[,]',$cadena_datos); //nombre 0, depto 1, asesor 2, valida 3, comentario 4, idCliente 5
 			if($datos_req[3]=="true"){
-			conectar("on");
-			mysql_query("SET NAMES 'utf8'");
+			$objConexion = conectar("on");
+			
 				$consulta_actualizar="UPDATE `cliente` SET `nombre_cliente`='".$datos_req[0]."', `depto_cliente`='".$datos_req[1]."', `asesor_cliente`='".$datos_req[2]."', `comentarios_cliente`='".$datos_req[4]."' WHERE `id_cliente`='".$datos_req[5]."'";
-				mysql_query($consulta_actualizar);
+				$objConexion->query($consulta_actualizar);
 			conectar("off");
 			echo '<div id="ventana_actualizado">
 					<p>Se han actualizado los datos del cliente: <br />
@@ -952,10 +952,10 @@
 				  </script>';
 		break;
 		case "cambiar_correo_usuario_actual":
-			conectar("on");
-				mysql_query("SET NAMES 'utf8'");
+			$objConexion = conectar("on");
+				
 				$consulta_actualizar_correo='UPDATE `usuario` SET `email_usuario`="'.$_POST['correo_nuevo'].'" WHERE `id_usuario`='.$id_usr.'';
-				mysql_query($consulta_actualizar_correo);
+				$objConexion->query($consulta_actualizar_correo);
 			conectar("off");
 			$_SESSION['correo_usr']=$_POST['correo_nuevo'];
 			echo 'Cuenta de: '.$nombre_usr.'<br /><br />
@@ -997,10 +997,10 @@
 				  </script>';
 		break;
 		case "cambiar_telefono_usuario_actual":
-			conectar("on");
-				mysql_query("SET NAMES 'utf8'");
+			$objConexion = conectar("on");
+				
 				$consulta_actualizar_tel='UPDATE `usuario` SET `telefono_usuario`="'.$_POST['telefono_nuevo'].'" WHERE `id_usuario`='.$id_usr.'';
-				mysql_query($consulta_actualizar_tel);
+				$objConexion->query($consulta_actualizar_tel);
 			conectar("off");
 			echo 'Cuenta de: '.$nombre_usr.'<br /><br />
 				  El Teléfono se ha cambiado.<br /><br />
@@ -1046,10 +1046,10 @@
 				  </script>';
 		break;
 		case "cambiar_clave_usuario_actual":
-			conectar("on");
-	 		mysql_query("SET NAMES 'utf8'");
-	 		$consulta = mysql_query('SELECT * FROM usuario WHERE email_usuario="'.$correo_usr.'"');
-			if(!mysql_num_rows($consulta)){
+			$objConexion = conectar("on");
+	 		
+	 		$consulta = $objConexion->query('SELECT * FROM usuario WHERE email_usuario="'.$correo_usr.'"');
+			if($consulta->num_rows == 0){
 				echo 'Error fatal: No existe el usuario.
 					<center><button id="aceptar">Hecho</button></center>
 						<script type="text/javascript">
@@ -1060,15 +1060,15 @@
 					</script>';
 				conectar("off");
 			}
-			while($fila=mysql_fetch_array($consulta)){
+			while($fila=$consulta->fetch_assoc()){
 				$clave_anterior=$fila['password_usuario'];
 			}
 			conectar("off");
 			if($clave_anterior==$_POST['clvieja']){
-				conectar("on");
-					mysql_query("SET NAMES 'utf8'");
+				$objConexion = conectar("on");
+					
 					$consulta_actualizar_psw='UPDATE `usuario` SET `password_usuario`="'.$_POST['clnueva'].'" WHERE `id_usuario`='.$id_usr.'';
-					mysql_query($consulta_actualizar_psw);
+					$objConexion->query($consulta_actualizar_psw);
 				conectar("off");
 				echo 'Cuenta del usuario: <strong>'.$nombre_usr.'</strong><br /><br />
 				<center><strong>Su contrase&ntilde;a ha sido modificada correctamente.</strong></center><br /><br />
@@ -1140,10 +1140,10 @@
 					$numero2 = rand(100,1000);
 					$nombre_avatar = "avatar".$id_usr.$numero.$numero2.".jpg";
 	  				move_uploaded_file($temporal, $ruta . $nombre_avatar); //Movemos el archivo temporal a la ruta especificada
-				conectar("on");
-					mysql_query("SET NAMES 'utf8'");
+				$objConexion = conectar("on");
+					
 					$consulta_actualizar_avt='UPDATE `usuario` SET `avatar_usuario`="'.$nombre_avatar.'" WHERE `id_usuario`='.$id_usr.'';
-					mysql_query($consulta_actualizar_avt);
+					$objConexion->query($consulta_actualizar_avt);
 				conectar("off");
 					$_SESSION['avatar']=$ruta.$nombre_avatar;
 	  				//El echo es para que lo reciba jquery y lo ponga en el div "cargados"
@@ -1162,8 +1162,8 @@
 		$tipo_solicitud = $_POST['tipo'];
 		$id_solicitud = $_POST['numeroSolicitud'];
 		if($tipo_solicitud=="rcc"){
-			conectar("on");
-			mysql_query("SET NAMES 'utf8'");
+			$objConexion = conectar("on");
+			
 				$consulta = 'SELECT fecha_solicitud as fechaIngreso,
 							fecha_requerida_solicitud as fechaRequerida,
 							beneficiario_solicitud as beneficiario,
@@ -1175,7 +1175,7 @@
 							imagen_factura_solicitud as fotoFactura,
 							comentario_solicitud as comentario
 							FROM solicitud WHERE id_solicitud='.$id_solicitud.'';
-				$solicitudConsultada = mysql_query($consulta);
+				$solicitudConsultada = $objConexion->query($consulta);
 				while($fila=mysql_fetch_array($solicitudConsultada)){
 					$fechaIngreso=$fila['fechaIngreso'];
 					$fechaRequerida=$fila['fechaRequerida'];
@@ -1271,8 +1271,8 @@
 				</script>
 			';
 		}else if($tipo_solicitud=="prove"){
-			conectar("on");
-			mysql_query("SET NAMES 'utf8'");
+			$objConexion = conectar("on");
+			
 				$consulta = 'SELECT fecha_solicitud as fechaIngreso,
 							fecha_requerida_solicitud as fechaRequerida,
 							beneficiario_solicitud as beneficiario,
@@ -1284,7 +1284,7 @@
 							imagen_factura_solicitud as fotoFactura,
 							comentario_solicitud as comentario
 							FROM solicitud WHERE id_solicitud='.$id_solicitud.'';
-				$solicitudConsultada = mysql_query($consulta);
+				$solicitudConsultada = $objConexion->query($consulta);
 				while($fila=mysql_fetch_array($solicitudConsultada)){
 					$fechaIngreso=$fila['fechaIngreso'];
 					$fechaRequerida=$fila['fechaRequerida'];
@@ -1379,8 +1379,8 @@
 				</script>
 			';
 		}else if($tipo_solicitud=="comi"){
-			conectar("on");
-			mysql_query("SET NAMES 'utf8'");
+			$objConexion = conectar("on");
+			
 				$consulta = 'SELECT fecha_solicitud_comisiones as fechaIngreso,
 							fecha_requerida_comisiones as fechaRequerida,
 							concepto_comisiones as concepto,
@@ -1394,7 +1394,7 @@
 							comentario_comisiones as comentario,
 							imagen_factura_comision as fotoFactura
 							FROM comisiones WHERE id_comisiones='.$id_solicitud.'';
-				$solicitudConsultada = mysql_query($consulta);
+				$solicitudConsultada = $objConexion->query($consulta);
 				while($fila=mysql_fetch_array($solicitudConsultada)){
 					$fechaIngreso=$fila['fechaIngreso'];
 					$fechaRequerida=$fila['fechaRequerida'];
@@ -1594,10 +1594,9 @@
 	
 	function usuarios(){
 		$i=1;
-		conectar("on");
-		mysql_query("SET NAMES 'utf8'");
-		$consulta = mysql_query("SELECT id_usuario,email_usuario,password_usuario,nombre_usuario,rfc_usuario,telefono_usuario,(SELECT tipo FROM  tipo_usuario WHERE id_tipo_usuario=tipo_usuario) as tipo FROM  usuario");
-		if(!mysql_num_rows($consulta)){
+		$objConexion = conectar("on");
+		$consulta = $objConexion->query("SELECT id_usuario,email_usuario,password_usuario,nombre_usuario,rfc_usuario,telefono_usuario,(SELECT tipo FROM  tipo_usuario WHERE id_tipo_usuario=tipo_usuario) as tipo FROM  usuario");
+		if($consulta->num_rows == 0){
 			echo 'No hay usuarios'; /* editar esta opcion */ 
 	 	}
 		echo libreriasJS();
@@ -1606,7 +1605,7 @@
 		echo '<table border="1">';
 		echo '<thead><tr><th scope="col">Correo</th><th scope="col">Clave</th><th scope="col">Nombre</th><th scope="col">RFC</th><th scope="col">Telefono</th><th scope="col">Tipo</th><th scope="col">Acci&oacute;n</th></tr></thead>';
 		echo '<tbody>';
-			while($fila=mysql_fetch_array($consulta)){
+			while($fila=$consulta->fetch_assoc()){
 				if(($i%2)==0){
 					echo '<tr>';
 						echo '<td>'.$fila['email_usuario'].'</td>';
@@ -1650,10 +1649,10 @@
 	
 	function desarrollos(){
 		$i=1;
-		conectar("on");
-		mysql_query("SET NAMES 'utf8'");
-		$consulta = mysql_query("SELECT id_desarrollo as ID,nombre_desarrollo as Nombre,rfc_desarrollo as RFC,diereccion_desarrollo as Direccion,(SELECT nombre_usuario FROM  usuario WHERE id_usuario=usuario_desarrollo) as Usuario FROM  desarrollo");
-		if(!mysql_num_rows($consulta)){
+		$objConexion = conectar("on");
+		
+		$consulta = $objConexion->query("SELECT id_desarrollo as ID,nombre_desarrollo as Nombre,rfc_desarrollo as RFC,diereccion_desarrollo as Direccion,(SELECT nombre_usuario FROM  usuario WHERE id_usuario=usuario_desarrollo) as Usuario FROM  desarrollo");
+		if($consulta->num_rows == 0){
 			echo 'No hay usuarios'; /* editar esta opcion */ 
 	 	}
 		echo libreriasJS();
@@ -1662,7 +1661,7 @@
 		echo '<table border="1">';
 		echo '<thead><tr><th scope="col">Desarrollo</th><th scope="col">RFC</th><th scope="col">Direcci&oacute;n</th><th scope="col">Titular</th><th scope="col">Acci&oacute;n</th></tr></thead>';
 		echo '<tbody>';
-			while($fila=mysql_fetch_array($consulta)){
+			while($fila=$consulta->fetch_assoc()){
 				if(($i%2)==0){
 					echo '<tr>';
 						echo '<td>'.$fila['Nombre'].'</td>';
@@ -1703,10 +1702,10 @@
 	
 	function departamentos(){
 		$i=1;
-		conectar("on");
-		mysql_query("SET NAMES 'utf8'");
-		$consulta = mysql_query("SELECT id_departamento as ID,nombre_departamento as Departamento FROM  departamento");
-		if(!mysql_num_rows($consulta)){
+		$objConexion = conectar("on");
+		
+		$consulta = $objConexion->query("SELECT id_departamento as ID,nombre_departamento as Departamento FROM  departamento");
+		if($consulta->num_rows == 0){
 			echo 'No hay usuarios'; /* editar esta opcion */ 
 	 	}
 		echo libreriasJS();
@@ -1715,7 +1714,7 @@
 		echo '<center><table border="1">';
 		echo '<thead><tr><th scope="col">Departamento</th><th scope="col">Acci&oacute;n</th></tr></thead>';
 		echo '<tbody>';
-			while($fila=mysql_fetch_array($consulta)){
+			while($fila=$consulta->fetch_assoc()){
 				if(($i%2)==0){
 					echo '<tr>';
 						echo '<td>'.$fila['Departamento'].'</td>';
@@ -1771,10 +1770,10 @@
 	
 	function clientes(){
 		$i=1;
-		conectar("on");
-		mysql_query("SET NAMES 'utf8'");
-		$consulta = mysql_query("SELECT id_cliente as clienteID, nombre_cliente as nombre, depto_cliente as depto, (SELECT nombre_usuario FROM usuario WHERE id_usuario=asesor_cliente) as asesor FROM cliente ORDER BY nombre");
-		if(!mysql_num_rows($consulta)){
+		$objConexion = conectar("on");
+		
+		$consulta = $objConexion->query("SELECT id_cliente as clienteID, nombre_cliente as nombre, depto_cliente as depto, (SELECT nombre_usuario FROM usuario WHERE id_usuario=asesor_cliente) as asesor FROM cliente ORDER BY nombre");
+		if($consulta->num_rows == 0){
 			echo 'No hay usuarios'; /* editar esta opcion */ 
 	 	}
 		echo libreriasJS();
@@ -1783,7 +1782,7 @@
 		echo '<center><table border="1">';
 		echo '<thead><tr><th scope="col">Cliente</th><th scope="col">Departamento</th><th scope="col">Asesor</th><th scope="col">Acci&oacute;n</th></tr></thead>';
 		echo '<tbody>';
-		while($fila=mysql_fetch_array($consulta)){
+		while($fila=$consulta->fetch_assoc()){
 				if(($i%2)==0){
 					echo '<tr>';
 						echo '<td>'.$fila['nombre'].'</td>';
@@ -1895,8 +1894,8 @@
 	/* Crea archivo XML */
 	
 	function crearXML(){
-		conectar("on");
-		mysql_query("SET NAMES 'utf8'");
+		$objConexion = conectar("on");
+		
 		$consulta='SELECT id_solicitud as numero,
 					fecha_requerida_solicitud as requerida,
 					beneficiario_solicitud as beneficiario,
@@ -1908,7 +1907,7 @@
 					estatus_solicitud as estado 
 					FROM solicitud WHERE tipo_solicitud=1';
 					
-		$datos_consulta=mysql_query($consulta);
+		$datos_consulta=$objConexion->query($consulta);
 		
 		$xml = new DomDocument('1.0','UTF-8');
 		$root = $xml->createElement('registros');
@@ -1949,7 +1948,7 @@
 					estatus_solicitud as estado 
 					FROM solicitud WHERE tipo_solicitud=2';
 					
-		$datos_consulta=mysql_query($consulta);
+		$datos_consulta=$objConexion->query($consulta);
 		
 		while($fila=mysql_fetch_array($datos_consulta)){
 			$proveedor = $xml->createElement('proveedor');
@@ -1989,7 +1988,7 @@
 					estatus_comisiones as estado
 					FROM comisiones';
 					
-		$datos_consulta=mysql_query($consulta);
+		$datos_consulta=$objConexion->query($consulta);
 		
 		while($fila=mysql_fetch_array($datos_consulta)){
 			$comision = $xml->createElement('comision');
