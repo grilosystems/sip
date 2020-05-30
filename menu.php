@@ -68,7 +68,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SPI - Corintio</title>
+<title>SPI</title>
 <link rel="stylesheet" href="css/jquery-ui-min.css" />
 <link rel="stylesheet" href="css/stylemenu.css" />
 <script type="text/javascript" src="js/jquery-2.min.js"></script>
@@ -136,7 +136,7 @@
         </div>
     </section>
     <footer>
-    	<center><h3>&copy;SPI - GriloSystems 2013</h3></center>
+    	<center><h3>&copy;SPI - GriloSystems <?php echo date('Y')?></h3></center>
     </footer>	
 </div>
 </body>
