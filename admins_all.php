@@ -1507,58 +1507,28 @@
 	break;
 /********************************************************* LLAMADAS A FUNCIONES *******************************************************************/		
 		case "exp_usr":
-		exporta("tab_Usr","Usuarios");
-		
-			if($id_usr){
-				exporta("tab_Usr","Usuarios");
-			}else{
-				header('Location: http://www.grilosystems.com');
-			}
+			exporta("tab_Usr","Usuarios");
 		break;
 		case "exp_des":
-			if(isset($_SESSION['usr_ses'])){
-				exporta("tab_Des","Desarrollos");
-			}else{
-				header('Location: http://www.grilosystems.com');
-			}
+			exporta("tab_Des","Desarrollos");
 		break;
 		case "exp_dep":
-			if(isset($_SESSION['usr_ses'])){
-				exporta("tab_Dep","Departamentos");
-			}else{
-				header('Location: http://www.grilosystems.com');
-			}
+			exporta("tab_Dep","Departamentos");
 		break;
 		case "exp_scc":
-			if(isset($_SESSION['usr_ses'])){
-				exporta("tab_s_caja","Rembolso caja chica");
-			}else{
-				header('Location: http://www.grilosystems.com');
-			}
+			exporta("tab_s_caja","Rembolso caja chica");
 		break;
 		case "exp_spv":
-			if(isset($_SESSION['usr_ses'])){
-				exporta("tab_s_proveedor","Proveedores");
-			}else{
-				header('Location: http://www.grilosystems.com');
-			}
+			exporta("tab_s_proveedor","Proveedores");
 		break;
 		case "exp_com":
-			if(isset($_SESSION['usr_ses'])){
-				exporta("tab_s_comision","Comisiones");
-			}else{
-				header('Location: http://www.grilosystems.com');
-			}
+			exporta("tab_s_comision","Comisiones");
 		break;
 		case "exp_sall":
 			exporta("tab_s_todas","Todas las solicitudes");
 		break;
 		case "exp_cli":
-			if(isset($_SESSION['usr_ses'])){
-				exporta("tab_clientes","Clientes");
-			}else{
-				header('Location: http://www.grilosystems.com');
-			}
+			exporta("tab_clientes","Clientes");
 		break;
 	}
 	
