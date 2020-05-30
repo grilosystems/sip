@@ -73,11 +73,10 @@ function cargarDatos(){
             <select data-placeholder="Seleccione un desarrollo..." id="seldesDesarrollo" class="chosen-select" style="width:260px;" name="desarrollo">
             	<option value=""></option>
             	<?php
-					conectar("on");
-					mysql_query("SET NAMES 'utf8'");
-					$opciones = mysql_query('SELECT id_desarrollo, nombre_desarrollo FROM desarrollo');
-					if(mysql_num_rows($opciones) != 0){
-						while($fila=mysql_fetch_array($opciones)){
+					$objConexion = conectar("on");
+					$opciones = $objConexion->query('SELECT id_desarrollo, nombre_desarrollo FROM desarrollo');
+					if($opciones->num_rows != 0){
+						while($fila=$opciones->fetch_assoc()){
 							echo '<option value="'.$fila['id_desarrollo'].'">'.$fila['nombre_desarrollo'].'</option>'; 
 						}
 					}else{
@@ -91,11 +90,10 @@ function cargarDatos(){
             <select data-placeholder="Seleccione un departamento..." id="seldesDepartamento" class="chosen-select" style="width:260px;" name="depto">
             	<option value=""></option>
             	<?php
-					conectar("on");
-					mysql_query("SET NAMES 'utf8'");
-					$opciones = mysql_query('SELECT id_departamento, nombre_departamento FROM departamento');
-					if(mysql_num_rows($opciones) != 0){
-						while($fila=mysql_fetch_array($opciones)){
+					$objConexion = conectar("on");
+					$opciones = $objConexion->query('SELECT id_departamento, nombre_departamento FROM departamento');
+					if($opciones->num_rows != 0){
+						while($fila=$opciones->fetch_assoc()){
 							echo '<option value="'.$fila['id_departamento'].'">'.$fila['nombre_departamento'].'</option>'; 
 						}
 					}else{

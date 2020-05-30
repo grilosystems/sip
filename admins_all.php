@@ -3,15 +3,16 @@
 	include("conexion.php");
 	include("expdf.php");
 	
-	// /*Variables de sesión */
-	// if(!isset($_SESSION['usr_ses'])){
-	// 	// echo '<script type="text/javascript">window.location.assign("http://www.grilosystems.com");</script>';
-	// }
-	
+	/*Variables de sesión */
 	// $id_usr = $_SESSION['id_usr'];
 	// $id_tipo = $_SESSION['tipo_usr'];
 	// $nombre_usr = $_SESSION['usr_ses'];
 	// $correo_usr = $_SESSION['correo_usr'];
+
+	// if(!isset($_SESSION['usr_ses'])){
+	// 	// echo '<script type="text/javascript">window.location.assign("http://www.grilosystems.com");</script>';
+	// }
+	
 	$accion = "";
 
 	/*Javascript y JQuery*/
@@ -1506,7 +1507,9 @@
 	break;
 /********************************************************* LLAMADAS A FUNCIONES *******************************************************************/		
 		case "exp_usr":
-			if(isset($_SESSION['usr_ses'])){
+		exporta("tab_Usr","Usuarios");
+		
+			if($id_usr){
 				exporta("tab_Usr","Usuarios");
 			}else{
 				header('Location: http://www.grilosystems.com');

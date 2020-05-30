@@ -64,11 +64,10 @@ function cargarDatos(){
             <select data-placeholder="Seleccione un asesor..." id="seldesAsesor" class="chosen-select" style="width:260px;" name="asesor">
             	<option value=""></option>
             	<?php
-					conectar("on");
-					mysql_query("SET NAMES 'utf8'");
-					$opciones = mysql_query('SELECT id_usuario, nombre_usuario FROM usuario');
-					if(mysql_num_rows($opciones) != 0){
-						while($fila=mysql_fetch_array($opciones)){
+					$objConexion = conectar("on");
+					$opciones = $objConexion->query('SELECT id_usuario, nombre_usuario FROM usuario');
+					if($opciones->num_rows != 0){
+						while($fila=$opciones->fetch_assoc()){
 							echo '<option value="'.$fila['id_usuario'].'">'.$fila['nombre_usuario'].'</option>'; 
 						}
 					}else{

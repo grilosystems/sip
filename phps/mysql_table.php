@@ -1,5 +1,6 @@
 <?php
 require('fpdf.php');
+// require('conexion.php');
 
 class PDF_MySQL_Table extends FPDF
 {
@@ -75,12 +76,13 @@ function AddCol($field=-1,$width=-1,$caption='',$align='L')
 
 function Table($query,$prop=array())
 {
+	$objSql = conectar("on");
 	//Issue query
-	$res=mysql_query($query) or die('Error: '.mysql_error()."<BR>Query: $query");
+	$res=$objSql->query($query);
 	//Add all columns if none was specified
 	if(count($this->aCols)==0)
 	{
-		$nb=mysql_num_fields($res);
+		$nb=$res->num_rows;
 		for($i=0;$i<$nb;$i++)
 			$this->AddCol();
 	}
@@ -92,7 +94,7 @@ function Table($query,$prop=array())
 			if(is_string($col['f']))
 				$this->aCols[$i]['c']=ucfirst($col['f']);
 			else
-				$this->aCols[$i]['c']=ucfirst(mysql_field_name($res,$col['f']));
+				$this->aCols[$i]['c']=ucfirst(mysqli_fetch_field_direct($res,$col['f']));
 		}
 	}
 	//Handle properties

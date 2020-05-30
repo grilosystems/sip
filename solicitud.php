@@ -4,20 +4,20 @@
 	session_name('user_sesion');
 	session_start();
 	//Procesa solucitudes
-	$fecha_req = $_POST['fechareq'];
+	$fecha_req = isset($_POST['fechareq']) ? $_POST['fechareq'] : '';
 	$cerrar_session = $_POST['cerrarss'];
 	$tipo_solicitud = $_POST['ts'];
 	$cerrar_session = $_POST['cerrarss'];
-	$desarrollo = $_POST['desarrollo'];
-	$beneficiario = $_POST['beneficiario'];
-	$concepto = $_POST['concepto'];
-	$factura = $_POST['nfactura'];
-	$depto = $_POST['depto'];
+	$desarrollo = isset($_POST['desarrollo']) ? $_POST['desarrollo'] : '';
+	$beneficiario = isset($_POST['beneficiario']) ? $_POST['beneficiario'] : '';
+	$concepto = isset($_POST['concepto']) ? $_POST['concepto'] : '';
+	$factura = isset($_POST['nfactura']) ? $_POST['nfactura'] : '';
+	$depto = isset($_POST['depto']) ? $_POST['depto'] : '';
 	$monto = $_POST['monto'];
 	$coment = $_POST['comentario'];
 	$usuario_creador = $_SESSION['id_usr'];
-	$factura_archivo = $_FILES['archivoFactura']['tmp_name'];
-	$tipo_archivo = $_FILES['archivoFactura']['type'];
+	$factura_archivo = isset($_FILES['archivoFactura']['tmp_name']) ? $_FILES['archivoFactura']['tmp_name'] : '';
+	$tipo_archivo = isset($_FILES['archivoFactura']['type']) ? $_FILES['archivoFactura']['type'] : '';
 	//Fecha actual
 	$anio = date("Y");
 	$dia = date("j");
