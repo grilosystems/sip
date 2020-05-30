@@ -1,7 +1,8 @@
 <?php
 	
 	include('admins_all.php');
-	
+	session_name('user_sesion');
+	session_start();
 	//Procesa solucitudes
 	$fecha_req = $_POST['fechareq'];
 	$cerrar_session = $_POST['cerrarss'];

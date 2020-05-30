@@ -33,26 +33,25 @@
 	/* Insertar datos en la base de datos */
 	
 	function agregar($consulta){
-		conectar("on");
-			mysql_query("SET NAMES 'utf8'");
-			mysql_query($consulta);
+		$objectSql = conectar("on");
+			$objectSql->query($consulta);
 		conectar("off");
 	}
 	
 	function regresa_id($tipo_solicitud){
+		$objectSql = conectar("on");
 		if($tipo_solicitud==3){
-			conectar("on");
 				$consulta = "SELECT MAX(id_comisiones) as ultimo_ID FROM comisiones";
-				$los_ids = mysql_query($consulta);
-				while($fila=mysql_fetch_array($los_ids)){
+				$los_ids = $objectSql->query($consulta);
+				while($fila=$los_ids->fetch_assoc()){
 					$el_id=$fila['ultimo_ID'];
 				}
 			conectar("off");			
 		}else{
 			conectar("on");
 				$consulta = "SELECT MAX(id_solicitud) AS ultimo_ID FROM solicitud WHERE tipo_solicitud=".$tipo_solicitud."";
-				$los_ids = mysql_query($consulta);
-				while($fila=mysql_fetch_array($los_ids)){
+				$los_ids = $objectSql->query($consulta);
+				while($fila=$los_ids->fetch_assoc()){
 					$el_id=$fila['ultimo_ID'];
 				}
 			conectar("off");

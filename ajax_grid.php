@@ -1,8 +1,7 @@
 <?php
 	// connect to db
 	include("conexion.php");
-	conectar("on");
-	mysql_query("SET NAMES 'utf8'");
+	$objConnect = conectar("on");
 	// require our class
 	require_once("grid.php");
 	$tipo_solicitud = $_GET['tsajax'];

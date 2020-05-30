@@ -14,7 +14,7 @@
 	// $correo_usr = $_SESSION['correo_usr'];
 	$accion = "";
 
-	/*Java y JQuery*/
+	/*Javascript y JQuery*/
 	$librerias='<script type="text/javascript" src="js/jquery-2.min.js"></script>
 			  	<script type="text/javascript" src="js/jqueryui.js"></script>
 				<script type="text/javascript" src="js/jquery.validate.js"></script>
