@@ -1,5 +1,5 @@
 # SPI
-Sistema Integral de Pagos
+Sistema de Pago Integral
 
 Este sistema fue inicialmente creado con base en PHP 5, no se utilizo ningún Framework ni tampoco se siguió un patrón de diseño para su desarrollo, en la actualidad se esta realizando la migración y actualización con PHP 7 la cual no tiene fecha de termino ya que se espera que se unan colaboradores a este proyecto.
 
