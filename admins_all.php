@@ -115,7 +115,7 @@
 							$objConexion = conectar("on");
 							
 							$opciones=$objConexion->query("SELECT * FROM tipo_usuario");
-							while($opcion=mysql_fetch_array($opciones)){
+							while($opcion=$opciones->fetch_assoc()){
 								if($opcion['id_tipo_usuario']==$tipo_usr_opc){
 									echo '<option value="'.$opcion['id_tipo_usuario'].'" selected="selected">'.$opcion['tipo'].'</option>';
 								}else{
@@ -223,7 +223,7 @@
 							$objConexion = conectar("on");
 							
 							$opciones=$objConexion->query("SELECT * FROM tipo_usuario");
-							while($opcion=mysql_fetch_array($opciones)){
+							while($opcion=$opciones->fetch_assoc()){
 								if($opcion['id_tipo_usuario']==$tipo_usr_opc){
 									echo '<option value="'.$opcion['id_tipo_usuario'].'" selected="selected">'.$opcion['tipo'].'</option>';
 								}else{
@@ -337,7 +337,7 @@
 							$objConexion = conectar("on");
 							
 							$opciones=$objConexion->query("SELECT id_usuario, nombre_usuario FROM usuario");
-							while($opcion=mysql_fetch_array($opciones)){
+							while($opcion=$opciones->fetch_assoc()){
 								if($opcion['id_usuario']==$usr_des){
 									echo '<option value="'.$opcion['id_usuario'].'" selected="selected">'.$opcion['nombre_usuario'].'</option>';
 								}else{
@@ -434,7 +434,7 @@
 						$objConexion = conectar("on");
 						
 						$opciones=$objConexion->query("SELECT id_usuario, nombre_usuario FROM usuario");
-						while($opcion=mysql_fetch_array($opciones)){
+						while($opcion=$opciones->fetch_assoc()){
 							if($opcion['id_usuario']==$usr_des){
 								echo '<option value="'.$opcion['id_usuario'].'" selected="selected">'.$opcion['nombre_usuario'].'</option>';
 							}else{
@@ -697,7 +697,7 @@
 						$objConexion = conectar("on");
 						
 						$opciones=$objConexion->query("SELECT id_usuario, nombre_usuario FROM usuario");
-						while($opcion=mysql_fetch_array($opciones)){
+						while($opcion=$opciones->fetch_assoc()){
 							if($opcion['id_usuario']==$id_asesorCliente){
 								echo '<option value="'.$opcion['id_usuario'].'" selected="selected">'.$opcion['nombre_usuario'].'</option>';
 							}else{
@@ -1179,7 +1179,7 @@
 							comentario_solicitud as comentario
 							FROM solicitud WHERE id_solicitud='.$id_solicitud.'';
 				$solicitudConsultada = $objConexion->query($consulta);
-				while($fila=mysql_fetch_array($solicitudConsultada)){
+				while($fila=$solicitudConsultada->fetch_assoc()){
 					$fechaIngreso=$fila['fechaIngreso'];
 					$fechaRequerida=$fila['fechaRequerida'];
 					$beneficiario=$fila['beneficiario'];
@@ -1288,7 +1288,7 @@
 							comentario_solicitud as comentario
 							FROM solicitud WHERE id_solicitud='.$id_solicitud.'';
 				$solicitudConsultada = $objConexion->query($consulta);
-				while($fila=mysql_fetch_array($solicitudConsultada)){
+				while($fila=$solicitudConsultada->fetch_assoc()){
 					$fechaIngreso=$fila['fechaIngreso'];
 					$fechaRequerida=$fila['fechaRequerida'];
 					$beneficiario=$fila['beneficiario'];
@@ -1398,7 +1398,7 @@
 							imagen_factura_comision as fotoFactura
 							FROM comisiones WHERE id_comisiones='.$id_solicitud.'';
 				$solicitudConsultada = $objConexion->query($consulta);
-				while($fila=mysql_fetch_array($solicitudConsultada)){
+				while($fila=$solicitudConsultada->fetch_assoc()){
 					$fechaIngreso=$fila['fechaIngreso'];
 					$fechaRequerida=$fila['fechaRequerida'];
 					$concepto=$fila['concepto'];
@@ -1916,7 +1916,7 @@
 		$root = $xml->createElement('registros');
 		$root = $xml->appendChild($root);
 		
-		while($fila=mysql_fetch_array($datos_consulta)){
+		while($fila=$datos_consulta->fetch_assoc()){
 			$caja = $xml->createElement('caja');
  			$caja = $root->appendChild($caja);
 			$numero_sc = $xml->createElement('id_solicitud',$fila['numero']);
@@ -1953,7 +1953,7 @@
 					
 		$datos_consulta=$objConexion->query($consulta);
 		
-		while($fila=mysql_fetch_array($datos_consulta)){
+		while($fila=$datos_consulta->fetch_assoc()){
 			$proveedor = $xml->createElement('proveedor');
  			$proveedor = $root->appendChild($proveedor);
 			$numero_sp = $xml->createElement('id_solicitud',$fila['numero']);
@@ -1993,7 +1993,7 @@
 					
 		$datos_consulta=$objConexion->query($consulta);
 		
-		while($fila=mysql_fetch_array($datos_consulta)){
+		while($fila=$datos_consulta->fetch_assoc()){
 			$comision = $xml->createElement('comision');
  			$comision = $root->appendChild($comision);
 			$numero_scn = $xml->createElement('id_solicitud',$fila['numero']);
