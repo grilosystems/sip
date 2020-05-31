@@ -1,16 +1,9 @@
 <?php
 	 include("conexion.php");
-	 session_name('user_sesion');
-	 session_start();
-	 $_SESSION['usr_ses']='nada';
-	 $_SESSION['tipo_usr']='nada';
-	 $_SESSION['id_usr']='nada';
-	 $_SESSION['avatar']='nada';
-	 $_SESSION['correo_usr']='nada';
-	 
-	 $clave = $_POST['clave_usr'];
-	 $usr = $_POST['mail_usr'];
-	 if($usr!=""){
+	 $clave 	= $_POST['clave_usr'];
+	 $usr 		= $_POST['mail_usr'];
+
+	 if($usr != ""){
 	 	try {
 	 		$objConexion = conectar("on");
 	 	} catch (Exception $e) {
@@ -33,13 +26,15 @@
 
 		while($fila = $consulta->fetch_assoc()){
 			 if($clave == $fila['password_usuario']){
-				//Redireccionar a la pagina menu
-				$_SESSION['usr_ses']=$fila['nombre_usuario'];
-				$_SESSION['tipo_usr']=$fila['tipo_usuario'];
-				$_SESSION['id_usr']=$fila['id_usuario'];
-				$_SESSION['correo_usr']=$fila['email_usuario'];
-				$_SESSION['avatar']=$fila['avatar'];
-				if($fila['tipo_usuario']==1){
+				session_name('user_sesion');
+	 			session_start();
+				$_SESSION['usr_ses']	= $fila['nombre_usuario'];
+				$_SESSION['tipo_usr']	= $fila['tipo_usuario'];
+				$_SESSION['id_usr']		= $fila['id_usuario'];
+				$_SESSION['correo_usr']	= $fila['email_usuario'];
+				$_SESSION['avatar']		= $fila['avatar'];
+
+				if($fila['tipo_usuario'] == 1){
 					header('Location: menu.php'); 
 				}else{
 					header('Location: menugeneral.php'); 
@@ -62,5 +57,4 @@
 			window.location.assign("index.html");
 		 </script>';
 	 }
-
 ?>
